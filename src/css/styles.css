@@ -10,18 +10,94 @@ body {
   background-color: pink;
 }
 
-.background-container {
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.main-container {
   height: 100vh;
   width: 100vw;
 }
-.background-container .image-container {
+.main-container .image-container {
   height: 100%;
   width: 100vw;
   overflow: hidden;
   display: flex;
   justify-content: center;
 }
-.background-container .image-container img {
+.main-container .image-container img {
   height: 100%;
   aspect-ratio: 2600/1080;
+}
+.main-container .nav-container .hotspot .hotspot-pointer {
+  height: 3.125rem;
+  width: 3.125rem;
+  position: relative;
+}
+.main-container .nav-container .hotspot .hotspot-pointer > div {
+  height: 3.125rem;
+  width: 3.125rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.main-container .nav-container .hotspot .hotspot-pointer .circle-in.circle-1 {
+  background: #233143;
+  transform: scale(0.86);
+}
+.main-container .nav-container .hotspot .hotspot-pointer .circle-in.circle-2 {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(0.76);
+}
+.main-container .nav-container .hotspot .hotspot-pointer .circle-in.circle-3 {
+  background: #c03;
+  transform: scale(0.36);
+}
+.main-container .nav-container .hotspot .hotspot-pointer .circle-in.circle-4 {
+  background: #fff;
+  transform: scale(0.12);
+}
+.main-container .nav-container .hotspot .hotspot-pointer .circle-out {
+  border: 2.5px solid rgba(255, 255, 255, 0.5);
+  -webkit-animation: pulse 2s infinite linear;
+          animation: pulse 2s infinite linear;
+}
+.main-container .nav-container .hotspot .hotspot-pointer .circle-out.pulse-2 {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+@-webkit-keyframes pulse {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.3);
+  }
+}
+@keyframes pulse {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.3);
+  }
 }/*# sourceMappingURL=styles.css.map */
