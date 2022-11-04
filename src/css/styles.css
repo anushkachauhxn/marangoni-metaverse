@@ -18,6 +18,8 @@ body {
   height: 100%;
   width: 100vw;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
 }
 .background-container .image-container img {
   height: 100%;

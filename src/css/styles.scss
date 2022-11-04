@@ -19,6 +19,9 @@ body {
     width: 100vw;
     overflow: hidden;
 
+    display: flex;
+    justify-content: center;
+
     img {
       height: 100%;
       aspect-ratio: 2600 / 1080;
