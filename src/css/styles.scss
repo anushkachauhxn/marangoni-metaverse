@@ -152,6 +152,15 @@ a {
             border-radius: 2.5rem;
             box-shadow: 0 0 1.375rem #fff;
           }
+
+          opacity: 0;
+          transition: opacity 0.2s ease-in-out;
+        }
+        // Hover Behaviour
+        &:hover {
+          .info {
+            opacity: 1;
+          }
         }
       }
 
