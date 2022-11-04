@@ -8,4 +8,18 @@
 body {
   min-height: 100vh;
   background-color: pink;
+}
+
+.background-container {
+  height: 100vh;
+  width: 100vw;
+}
+.background-container .image-container {
+  height: 100%;
+  width: 100vw;
+  overflow: hidden;
+}
+.background-container .image-container img {
+  height: 100%;
+  aspect-ratio: 2600/1080;
 }/*# sourceMappingURL=styles.css.map */
