@@ -9,6 +9,8 @@ body {
   min-height: 100vh;
   background-color: pink;
 }
+
+// General Styles
 ul {
   list-style: none;
 }
@@ -16,128 +18,135 @@ a {
   color: inherit;
   text-decoration: none;
 }
+@mixin flex-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .main-container {
   height: 100vh;
   width: 100vw;
+  @include flex-col();
+  overflow: hidden;
   position: relative;
 
-  .image-container {
+  .draggable-content {
     height: 100%;
-    width: 100vw;
-    overflow: hidden;
+    width: max-content;
 
-    display: flex;
-    justify-content: center;
-
-    img {
+    .image-container {
       height: 100%;
-      aspect-ratio: 2600 / 1080;
+      img {
+        height: 100%;
+        aspect-ratio: 2600 / 1080;
+      }
     }
-  }
 
-  .nav-container {
-    .hotspot {
-      position: absolute;
+    .nav-container {
+      .hotspot {
+        position: absolute;
 
-      // Positioning different nav items on the map
-      &.pavillon {
-        left: 48.25%;
-        top: 39%;
-      }
-      &.plaza {
-        left: 46.25%;
-        top: 61.5%;
-      }
-      &.archive {
-        left: 34.75%;
-        top: 61.5%;
-      }
-      &.theater {
-        left: 62%;
-        top: 43%;
-      }
-      &.partner {
-        left: 60%;
-        top: 66.75%;
-      }
+        // Positioning different nav items on the map
+        &.pavillon {
+          left: 48.25%;
+          top: 39%;
+        }
+        &.plaza {
+          left: 46.25%;
+          top: 61.5%;
+        }
+        &.archive {
+          left: 34.75%;
+          top: 61.5%;
+        }
+        &.theater {
+          left: 62%;
+          top: 43%;
+        }
+        &.partner {
+          left: 60%;
+          top: 66.75%;
+        }
 
-      // Hotspot Pointer => Animated Button
-      .hotspot-pointer {
-        height: 3.125rem;
-        width: 3.125rem;
-        position: relative;
-
-        > div {
+        // Hotspot Pointer => Animated Button
+        .hotspot-pointer {
           height: 3.125rem;
           width: 3.125rem;
-          border-radius: 50%;
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-        }
-        .circle-in {
-          &.circle-1 {
-            background: #233143;
-            transform: scale(0.86);
+          position: relative;
+
+          > div {
+            height: 3.125rem;
+            width: 3.125rem;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
           }
-          &.circle-2 {
-            background: rgba(255, 255, 255, 0.2);
-            transform: scale(0.76);
+          .circle-in {
+            &.circle-1 {
+              background: #233143;
+              transform: scale(0.86);
+            }
+            &.circle-2 {
+              background: rgba(255, 255, 255, 0.2);
+              transform: scale(0.76);
+            }
+            &.circle-3 {
+              background: #c03;
+              transform: scale(0.36);
+            }
+            &.circle-4 {
+              background: #fff;
+              transform: scale(0.12);
+            }
           }
-          &.circle-3 {
-            background: #c03;
-            transform: scale(0.36);
-          }
-          &.circle-4 {
-            background: #fff;
-            transform: scale(0.12);
-          }
-        }
-        .circle-out {
-          border: 2.5px solid rgba(255, 255, 255, 0.5);
-          animation: pulse 2s infinite linear;
-          &.pulse-2 {
-            animation-delay: 1s;
+          .circle-out {
+            border: 2.5px solid rgba(255, 255, 255, 0.5);
+            animation: pulse 2s infinite linear;
+            &.pulse-2 {
+              animation-delay: 1s;
+            }
           }
         }
       }
-    }
 
-    // Non-active Hotspots
-    .hotspot:not(.active) {
-      .hotspot-pointer {
-        cursor: not-allowed;
+      // Non-active Hotspots
+      .hotspot:not(.active) {
+        .hotspot-pointer {
+          cursor: not-allowed;
 
-        .circle-in {
-          opacity: 0.7;
-          &.circle-3 {
-            background: rgba(255, 255, 255, 0.2);
+          .circle-in {
+            opacity: 0.7;
+            &.circle-3 {
+              background: rgba(255, 255, 255, 0.2);
+            }
+            &.circle-4 {
+              background: rgba(255, 255, 255, 0.5);
+            }
           }
-          &.circle-4 {
-            background: rgba(255, 255, 255, 0.5);
+          .circle-out {
+            opacity: 0;
+            animation-play-state: paused;
           }
         }
-        .circle-out {
+      }
+
+      @keyframes pulse {
+        0% {
           opacity: 0;
-          animation-play-state: paused;
+          transform: scale(0.7);
         }
-      }
-    }
-
-    @keyframes pulse {
-      0% {
-        opacity: 0;
-        transform: scale(0.7);
-      }
-      50% {
-        opacity: 1;
-        transform: scale(1);
-      }
-      100% {
-        opacity: 0;
-        transform: scale(1.3);
+        50% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        100% {
+          opacity: 0;
+          transform: scale(1.3);
+        }
       }
     }
   }

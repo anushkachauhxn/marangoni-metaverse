@@ -22,48 +22,55 @@ a {
 .main-container {
   height: 100vh;
   width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
   position: relative;
 }
-.main-container .image-container {
+.main-container .draggable-content {
   height: 100%;
-  width: 100vw;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
-.main-container .image-container img {
+.main-container .draggable-content .image-container {
+  height: 100%;
+}
+.main-container .draggable-content .image-container img {
   height: 100%;
   aspect-ratio: 2600/1080;
 }
-.main-container .nav-container .hotspot {
+.main-container .draggable-content .nav-container .hotspot {
   position: absolute;
 }
-.main-container .nav-container .hotspot.pavillon {
+.main-container .draggable-content .nav-container .hotspot.pavillon {
   left: 48.25%;
   top: 39%;
 }
-.main-container .nav-container .hotspot.plaza {
+.main-container .draggable-content .nav-container .hotspot.plaza {
   left: 46.25%;
   top: 61.5%;
 }
-.main-container .nav-container .hotspot.archive {
+.main-container .draggable-content .nav-container .hotspot.archive {
   left: 34.75%;
   top: 61.5%;
 }
-.main-container .nav-container .hotspot.theater {
+.main-container .draggable-content .nav-container .hotspot.theater {
   left: 62%;
   top: 43%;
 }
-.main-container .nav-container .hotspot.partner {
+.main-container .draggable-content .nav-container .hotspot.partner {
   left: 60%;
   top: 66.75%;
 }
-.main-container .nav-container .hotspot .hotspot-pointer {
+.main-container .draggable-content .nav-container .hotspot .hotspot-pointer {
   height: 3.125rem;
   width: 3.125rem;
   position: relative;
 }
-.main-container .nav-container .hotspot .hotspot-pointer > div {
+.main-container .draggable-content .nav-container .hotspot .hotspot-pointer > div {
   height: 3.125rem;
   width: 3.125rem;
   border-radius: 50%;
@@ -72,44 +79,44 @@ a {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.main-container .nav-container .hotspot .hotspot-pointer .circle-in.circle-1 {
+.main-container .draggable-content .nav-container .hotspot .hotspot-pointer .circle-in.circle-1 {
   background: #233143;
   transform: scale(0.86);
 }
-.main-container .nav-container .hotspot .hotspot-pointer .circle-in.circle-2 {
+.main-container .draggable-content .nav-container .hotspot .hotspot-pointer .circle-in.circle-2 {
   background: rgba(255, 255, 255, 0.2);
   transform: scale(0.76);
 }
-.main-container .nav-container .hotspot .hotspot-pointer .circle-in.circle-3 {
+.main-container .draggable-content .nav-container .hotspot .hotspot-pointer .circle-in.circle-3 {
   background: #c03;
   transform: scale(0.36);
 }
-.main-container .nav-container .hotspot .hotspot-pointer .circle-in.circle-4 {
+.main-container .draggable-content .nav-container .hotspot .hotspot-pointer .circle-in.circle-4 {
   background: #fff;
   transform: scale(0.12);
 }
-.main-container .nav-container .hotspot .hotspot-pointer .circle-out {
+.main-container .draggable-content .nav-container .hotspot .hotspot-pointer .circle-out {
   border: 2.5px solid rgba(255, 255, 255, 0.5);
   -webkit-animation: pulse 2s infinite linear;
           animation: pulse 2s infinite linear;
 }
-.main-container .nav-container .hotspot .hotspot-pointer .circle-out.pulse-2 {
+.main-container .draggable-content .nav-container .hotspot .hotspot-pointer .circle-out.pulse-2 {
   -webkit-animation-delay: 1s;
           animation-delay: 1s;
 }
-.main-container .nav-container .hotspot:not(.active) .hotspot-pointer {
+.main-container .draggable-content .nav-container .hotspot:not(.active) .hotspot-pointer {
   cursor: not-allowed;
 }
-.main-container .nav-container .hotspot:not(.active) .hotspot-pointer .circle-in {
+.main-container .draggable-content .nav-container .hotspot:not(.active) .hotspot-pointer .circle-in {
   opacity: 0.7;
 }
-.main-container .nav-container .hotspot:not(.active) .hotspot-pointer .circle-in.circle-3 {
+.main-container .draggable-content .nav-container .hotspot:not(.active) .hotspot-pointer .circle-in.circle-3 {
   background: rgba(255, 255, 255, 0.2);
 }
-.main-container .nav-container .hotspot:not(.active) .hotspot-pointer .circle-in.circle-4 {
+.main-container .draggable-content .nav-container .hotspot:not(.active) .hotspot-pointer .circle-in.circle-4 {
   background: rgba(255, 255, 255, 0.5);
 }
-.main-container .nav-container .hotspot:not(.active) .hotspot-pointer .circle-out {
+.main-container .draggable-content .nav-container .hotspot:not(.active) .hotspot-pointer .circle-out {
   opacity: 0;
   -webkit-animation-play-state: paused;
           animation-play-state: paused;
