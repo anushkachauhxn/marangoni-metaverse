@@ -20,6 +20,7 @@ a {
 .main-container {
   height: 100vh;
   width: 100vw;
+  position: relative;
 
   .image-container {
     height: 100%;
@@ -37,6 +38,30 @@ a {
 
   .nav-container {
     .hotspot {
+      position: absolute;
+
+      // Positioning different nav items on the map
+      &.pavillon {
+        left: 48.25%;
+        top: 39%;
+      }
+      &.plaza {
+        left: 46.25%;
+        top: 61.5%;
+      }
+      &.archive {
+        left: 34.75%;
+        top: 61.5%;
+      }
+      &.theater {
+        left: 62%;
+        top: 43%;
+      }
+      &.partner {
+        left: 60%;
+        top: 66.75%;
+      }
+
       // Hotspot Pointer => Animated Button
       .hotspot-pointer {
         height: 3.125rem;

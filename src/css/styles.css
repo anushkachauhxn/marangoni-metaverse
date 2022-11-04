@@ -22,6 +22,7 @@ a {
 .main-container {
   height: 100vh;
   width: 100vw;
+  position: relative;
 }
 .main-container .image-container {
   height: 100%;
@@ -33,6 +34,29 @@ a {
 .main-container .image-container img {
   height: 100%;
   aspect-ratio: 2600/1080;
+}
+.main-container .nav-container .hotspot {
+  position: absolute;
+}
+.main-container .nav-container .hotspot.pavillon {
+  left: 48.25%;
+  top: 39%;
+}
+.main-container .nav-container .hotspot.plaza {
+  left: 46.25%;
+  top: 61.5%;
+}
+.main-container .nav-container .hotspot.archive {
+  left: 34.75%;
+  top: 61.5%;
+}
+.main-container .nav-container .hotspot.theater {
+  left: 62%;
+  top: 43%;
+}
+.main-container .nav-container .hotspot.partner {
+  left: 60%;
+  top: 66.75%;
 }
 .main-container .nav-container .hotspot .hotspot-pointer {
   height: 3.125rem;
