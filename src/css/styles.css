@@ -46,24 +46,24 @@ a {
   position: absolute;
 }
 .main-container .draggable-content .nav-container .hotspot.pavillon {
-  left: 48.25%;
-  top: 39%;
+  left: 48.65%;
+  top: 38.25%;
 }
 .main-container .draggable-content .nav-container .hotspot.plaza {
-  left: 46.25%;
+  left: 46.65%;
   top: 61.5%;
 }
 .main-container .draggable-content .nav-container .hotspot.archive {
-  left: 34.75%;
+  left: 37.12%;
   top: 61.5%;
 }
 .main-container .draggable-content .nav-container .hotspot.theater {
-  left: 62%;
-  top: 43%;
+  left: 60%;
+  top: 42.75%;
 }
 .main-container .draggable-content .nav-container .hotspot.partner {
-  left: 60%;
-  top: 66.75%;
+  left: 58.25%;
+  top: 66.2%;
 }
 .main-container .draggable-content .nav-container .hotspot .hotspot-pointer {
   height: 3.125rem;
