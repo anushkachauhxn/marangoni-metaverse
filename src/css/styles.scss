@@ -128,11 +128,12 @@ a {
           left: 50%;
           transform: translateX(-35%);
 
+          color: #fff;
+          font-size: 0.875rem;
+          white-space: nowrap;
+
           span {
             @include flex-row();
-            color: #fff;
-            font-size: 0.875rem;
-            white-space: nowrap;
             .icon {
               margin-right: 0.5rem;
               width: 1.5rem;
@@ -171,6 +172,19 @@ a {
           .circle-out {
             opacity: 0;
             animation-play-state: paused;
+          }
+        }
+
+        .info {
+          background: #233143;
+          pointer-events: none;
+          span {
+            padding-top: 0.25rem;
+            opacity: 0.5;
+          }
+          &::after {
+            border: 2px solid rgba(229, 231, 235, 0.5);
+            box-shadow: none;
           }
         }
       }
